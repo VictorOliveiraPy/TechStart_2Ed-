@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}Meus Prdutos{% endblock %}
+
+{% block content %}
+    <h3>Meus anúncios</h3>
+    <br>
+    <p><a href="#">Novo anúncios</a></p>
+
+   <table class="table table-bordered">
+        <tr>
+            <th>Código</th>
+            <th>Título</th>
+            <th>Ação</th>
+        </tr>
+
+        {% for product in product_list %}
+            <tr>
+                <td>{{ product.id }}</td>
+                <td>{{ product.name }}</td>
+                <td>{{ product.prince }}</td>
+                <td>{{ product.short_description }}</td>
+                <td>Editar</td>
+            </tr>
+        {% endfor %}
+   </table>
+
+
+
+
+{% endblock %}
