@@ -24,7 +24,6 @@ class Category(BaseModel):
 
 
 class Product(BaseModel):
-    # user = models.ForeignKey(User, on_delete=models.CASCADE)
     categories = models.ManyToManyField(Category, related_name='categories')
     prince = models.DecimalField(max_length=8, decimal_places=2, max_digits=30)
 
@@ -48,6 +47,10 @@ class Marketplace(BaseModel):
     def get_absolute_url(self):
         return reverse('home')
 
+    class Meta:
+        verbose_name_plural = 'Marketplaces'
+        verbose_name = 'Marketplace'
+
 
 class Seller(models.Model):
     fantasy_name = models.CharField('Nome Fantasia', max_length=150)
@@ -61,15 +64,14 @@ class Seller(models.Model):
     district = models.CharField('Bairro', max_length=170)
     uf = models.CharField('UF', max_length=3)
     city = models.CharField('Cidade', max_length=120)
-    #user = models.ForeignKey(User, on_delete=models.CASCADE)
     products = models.ManyToManyField(Product, related_name='products')
 
     class Meta:
         verbose_name_plural = 'sellers'
+        verbose_name = 'Seller'
 
     def __str__(self):
         return self.company_name
 
     def get_absolute_url(self):
         return 'saller_list'
-
