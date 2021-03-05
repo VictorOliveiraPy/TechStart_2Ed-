@@ -61,7 +61,7 @@ class Seller(models.Model):
     cnpj = models.CharField('CNPJ', max_length=18)
     contact_email = models.EmailField('E-mail', max_length=120)
     contact_phone = models.CharField('Telefone', max_length=14)
-    Address = models.CharField('Rua', max_length=220)
+    address = models.CharField('Rua', max_length=220)
     zipcode = models.CharField('Cep', max_length=9)
     number = models.CharField('Numero', max_length=4)
     district = models.CharField('Bairro', max_length=170)
@@ -76,5 +76,6 @@ class Seller(models.Model):
     def __str__(self):
         return self.company_name
 
+
     def get_absolute_url(self):
-        return 'saller_list'
+        return reverse('seller-list')

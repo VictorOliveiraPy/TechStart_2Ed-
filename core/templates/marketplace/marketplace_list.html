@@ -1,40 +1,47 @@
-{% extends  'layout.html' %}
+{% extends 'base.html' %}
 
-{% block title %}Products{% endblock %}
+{% block title %}Meus Marketplace {% endblock %}
 
 {% block content %}
-    <br><br>
-    <div class="container table-responsive">
-        <h3>List Product</h3>
-        <br/><br/>
-        <table class="table table caption-top">
-            <thead>
-            <tr>
-                <th>Nome</th>
-                <th>E-mail</th>
-                <th>Site</th>
-                <th>Descrição</th>
-                <th>Responsável técnico</th>
-                <th>Ação</th>
-            </tr>
-            </thead>
-            <tbody>
-            {% for marketplace in marketplace_list %}
-                <tr>
-                    <td>{{ marketplace.name }}</td>
-                    <td>{{ marketplace.contact_email }}</td>
-                    <td>{{ marketplace.website }}</td>
-                    <td>{{ marketplace.description }}</td>
-                    <td>{{ marketplace.technical_manager }}</td>
+    <section class="section-content">
+        <div class="container">
+            <h3>Lista de Marketplace</h3>
+            <br>
+            <p><a href="{% url 'marketplace-create' %}">Novo Marketplace</a></p>
 
-                    <td>
-                        <a class="btn btn-secondary" href="{% url 'marketplace-update' marketplace.pk  %}">Edit<a>
-                        <a  class="btn btn-danger" href="{% url 'marketplace-delete' marketplace.pk %}">Delete<a>
-                        <a class="btn btn-success" href="{% url 'marketplace-create'  %}">New<a>
-                    </td>
+            <table class="table table_bordered">
+                <tr>
+                    <th>Código</th>
+                    <th>Nome</th>
+                    <th>Descrição</th>
+                    <th>Telefone</th>
+                    <th>E-mail</th>
+                    <th>Site</th>
+                    <th>Responsável técnico</th>
+                    <th>Ação</th>
                 </tr>
-            {% endfor %}
-            </tbody>
-        </table>
-    </div>
+
+                {% for market in marketplace_list %}
+                    <tr>
+
+                        <td>{{ market.id }}</td>
+                        <td>{{ market.name }}</td>
+                        <td>{{ market.description }}</td>
+                        <td>{{ market.contact_phone }}</td>
+                        <td>{{ market.contact_email }}</td>
+                        <td>{{ market.website }}</td>
+                        <td>{{ market.technical_manager }}</td>
+                        <td>
+                            <a href="{% url 'marketplace-update' market.pk %}">Editar</a> |
+                            <a href="{% url 'marketplace-delete' market.pk %}">Deletar
+
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </section>
 {% endblock %}
+
+

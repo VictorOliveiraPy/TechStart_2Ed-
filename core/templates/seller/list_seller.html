@@ -1,55 +1,53 @@
-{% extends  'layout.html' %}
+{% extends 'base.html' %}
 
-{% block title %}Seller{% endblock %}
+{% block title %}Vendedores {% endblock %}
 
 {% block content %}
+    <section class="section-content">
+        <div class="container">
+            <h3>Lista de vendedores</h3>
+            <br>
+            <p><a href="{% url 'seller-create' %}">Novo vendedor</a></p>
 
+            <table class="table table_bordered">
+                <tr>
+                   <th >Nome Fantasia</th>
+                    <th >Razão Social</th>
+                    <th scope="col">CNPJ</th>
+                    <th scope="col">E-mail</th>
+                    <th scope="col">Telefone</th>
+                    <th scope="col">Rua</th>
+                    <th scope="col">Cep</th>
+                    <th scope="col">Numero</th>
+                    <th scope="col">Bairro</th>
+                    <th scope="col">UF</th>
+                    <th scope="col">Cidade</th>
+                    <th scope="col">Ação</th>
+                </tr>
 
-        <h3 class="">List Seller</h3>
-
-
-    <div  class="container table-responsive-lg">
-        <br/><br/>
-        <table  class="table caption-top">
-            <thead >
-            <tr >
-                <th >Nome Fantasia</th>
-                <th  scope="col">Razão Social</th>
-                <th scope="col">CNPJ</th>
-                <th scope="col">E-mail</th>
-                <th scope="col">Telefone</th>
-                <th scope="col">Rua</th>
-                <th scope="col">Cep</th>
-                <th scope="col">Numero</th>
-                <th scope="col">Bairro</th>
-                <th scope="col">UF</th>
-                <th scope="col">Cidade</th>
-                <th scope="col">Ação</th>
-            </tr>
-            </thead>
-            <tbody>
-            {% for seller in seller_list %}
-                <tr id="table-action">
+                {% for seller in seller_list %}
+                    <tr>
                     <td>{{ seller.fantasy_name }}</td>
                     <td>{{ seller.company_name }}</td>
                     <td>{{ seller.cnpj }}</td>
                     <td>{{ seller.contact_email }}</td>
                     <td>{{ seller.contact_phone }}</td>
-                    <td>{{ seller.street }}</td>
+                    <td>{{ seller.address }}</td>
                     <td>{{ seller.zipcode }}</td>
                     <td>{{ seller.number }}</td>
                     <td>{{ seller.district }}</td>
-                    <td>{{ seller.uf }}</td>
+                    <td>{{ seller.state }}</td>
                     <td>{{ seller.city }}</td>
-                    <td>
-                        <a class="btn btn-secondary" href="{% url 'seller-update' seller.pk  %}">Edit<a>
-                        <a  class="btn btn-danger" href="{% url 'seller-delete' seller.pk %}">Delete<a>
-                        <a class="btn btn-success" href="{% url 'seller-create'  %}">New<a>
 
-                    </td>
-                </tr>
-            {% endfor %}
-            </tbody>
-        </table>
-    </div>
+                        <td>
+                            <a href="{% url 'seller-update' seller.pk %}">Editar</a> |
+                            <a href="{% url 'seller-delete' seller.pk %}">Deletar
+
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </section>
 {% endblock %}

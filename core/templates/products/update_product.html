@@ -8,7 +8,7 @@ c{% extends 'base.html' %}
             <h3>Editando: {{ product.name }}</h3>
             <br>
 
-            <form action="{% url 'product_edit' product.id %}" method="post">
+            <form action="{% url 'update-product' product.id %}" method="post">
 
                 {% csrf_token %}
 

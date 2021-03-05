@@ -1,38 +1,36 @@
-{% extends  'layout.html' %}
+{% extends 'base.html' %}
 
-{% block title %}Category{% endblock %}
+{% block title %}Categoria {% endblock %}
 
 {% block content %}
-    <br><br>
-    <div class="container">
-        <h3>List Category</h3>
-        <br/><br/>
-        <table class="table table-striped">
-            <thead>
-            <tr>
-                <th>Código</th>
-                <th>Nome</th>
-                <th>Descrição</th>
+    <section class="section-content">
+        <div class="container">
+            <h3>Categorias</h3>
+            <br>
+            <p><a href="{% url 'category-create' %}">Nova Categoria</a></p>
 
-                <th>Ação</th>
-            </tr>
-            </thead>
-            <tbody>
-            {% for category in category_list %}
+            <table class="table table_bordered">
                 <tr>
-                    <td>{{ category.id }}</td>
-                    <td>{{ category.name }}</td>
-                    <td>{{ category.description }}</td>
-                    <td>
-                        <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                            <button  type="button" class="btn btn-danger"><a href="{% url 'category-update' %}">  </a></button>
-                            <button type="button" class="btn btn-warning">Middle</button>
-                            <button type="button" class="btn btn-success">Right</button>
-                        </div>
-                    </td>
+                    <th>Código</th>
+                    <th>Nome</th>
+                    <th>Descrição</th>
+                    <th>Ação</th>
                 </tr>
-            {% endfor %}
-            </tbody>
-        </table>
-    </div>
+
+                {% for category in category_list %}
+                    <tr>
+                        <td>{{ category.id }}</td>
+                        <td>{{ category.name }}</td>
+                        <td>{{ category.description }}</td>
+                        <td>
+                            <a href="{% url 'category-update' category.pk %}">Editar</a> |
+                            <a href="{% url 'category-delete' category.pk %}">Deleta
+
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </section>
 {% endblock %}

@@ -93,18 +93,15 @@ class CategoryForm(forms.ModelForm):
 
         widgets = {
             'name': forms.TextInput(attrs={'class': 'form-control'}),
-            'categories': forms.SelectMultiple(attrs={'class': 'form-control'}),
             'description': forms.Textarea(attrs={'class': 'form-control'}),
         }
 
         labels = {
             'name': "Nome",
-            'categories': "Categories",
             'description': "Descrição",
         }
 
     labels = {
         'name': "Nome",
-        'categories': "Categories",
         'description': "Descrição",
     }
