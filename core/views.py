@@ -48,7 +48,7 @@ seller_list = ListView.as_view(
 seller_delete = DeleteView.as_view(
     template_name='seller/delete_seller.html',
     model=Seller,
-    success_url='seller/list/')
+    success_url='/seller/list/')
 
 marketplace_list = ListView.as_view(
     template_name='marketplace/marketplace_list.html',
@@ -57,7 +57,7 @@ marketplace_list = ListView.as_view(
 marketplace_delete = DeleteView.as_view(
     template_name='marketplace/marketplace_delete.html',
     model=Marketplace,
-    success_url='marketplace/list/')
+    success_url='/marketplace/list/')
 
 marketplace_update = UpdateView.as_view(
     template_name='marketplace/marketplace_update.html',
@@ -85,4 +85,4 @@ category_create = CreateView.as_view(
 category_delete = DeleteView.as_view(
     template_name='category/category_delete.html',
     model=Category,
-    success_url='category/list/')
+    success_url='/category/list/')
