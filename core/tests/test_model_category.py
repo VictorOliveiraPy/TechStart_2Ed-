@@ -1,6 +1,6 @@
 from django.test import TestCase
 
-from core.models import Product, Category
+from core.models import Category
 
 
 class TestCategoryModelTest(TestCase):
@@ -17,7 +17,3 @@ class TestCategoryModelTest(TestCase):
 
     def test_str(self):
         self.assertEqual('Eletronicos', str(self.obj))
-
-
-
-

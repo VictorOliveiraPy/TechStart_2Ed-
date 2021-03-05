@@ -1,6 +1,5 @@
 from django.shortcuts import render
 
-
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 
 from core.forms import ProductForm, MarketplaceForm, CategoryForm, SellerForm
@@ -74,5 +73,3 @@ category_create = CreateView.as_view(
 category_delete = DeleteView.as_view(
     template_name='category/category_delete.html',
     model=Category)
-
-

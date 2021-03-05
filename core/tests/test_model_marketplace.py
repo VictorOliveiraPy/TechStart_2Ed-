@@ -1,6 +1,6 @@
 from django.test import TestCase
 
-from core.models import Product, Seller, Marketplace
+from core.models import Marketplace
 
 
 class TestMarketplaceModelTest(TestCase):
@@ -21,10 +21,3 @@ class TestMarketplaceModelTest(TestCase):
 
     def test_str(self):
         self.assertEqual('olist', str(self.obj))
-
-
-
-
-
-
-

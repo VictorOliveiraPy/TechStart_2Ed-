@@ -1,6 +1,6 @@
 from django.test import TestCase
 
-from core.models import Product, Seller
+from core.models import Seller
 
 
 class TestProductModelTest(TestCase):
@@ -22,11 +22,7 @@ class TestProductModelTest(TestCase):
         self.obj.save()
 
     def test_create(self):
-        self.assertTrue(Seller.objects.exists())  # Verificar se existe no banco de dados
+        self.assertTrue(Seller.objects.exists())
 
     def test_str(self):
         self.assertEqual('olist', str(self.obj))
-
-
-
-
