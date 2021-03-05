@@ -51,6 +51,9 @@ class Marketplace(BaseModel):
         verbose_name_plural = 'Marketplaces'
         verbose_name = 'Marketplace'
 
+    def __str__(self):
+        return self.name
+
 
 class Seller(models.Model):
     fantasy_name = models.CharField('Nome Fantasia', max_length=150)

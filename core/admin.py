@@ -17,7 +17,7 @@ class ProductsAdmin(admin.ModelAdmin):
 
 @admin.register(Marketplace)
 class MarketplaceAdmin(admin.ModelAdmin):
-    list_display = ('id', 'contact_phone', 'contact_email', 'website')
+    list_display = ('id', 'contact_phone', 'contact_email', 'website', 'name', 'description')
 
     def website_link(self, obj):
         return format_html('<a href="{0}">{0}</a>', obj.website)
