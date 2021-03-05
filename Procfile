@@ -1,1 +1,1 @@
-web: gunicorn olist_tech.wsgi --log-file -
+web: gunicorn marketplace.wsgi --log-file -
