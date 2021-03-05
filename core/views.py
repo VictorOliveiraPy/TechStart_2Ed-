@@ -8,7 +8,7 @@ from core.models import Product, Seller, Category, Marketplace
 
 
 def home(request):
-    return render(request, 'layout.html')
+    return render(request, 'base.html')
 
 
 product_list = ListView.as_view(

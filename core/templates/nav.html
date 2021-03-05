@@ -1,14 +1,8 @@
-<ul class="nav nav-tabs">
-  <li class="nav-item">
-    <a class="nav-link active" href="{% url 'products' %}">Produtos</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="{% url 'category-list' %}">Categorias</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="{% url 'seller-list' %}">Vendedores</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="{% url 'marketplace-list' %}">Marketplace</a>
-  </li>
-</ul>
+
+<nav class="nav nav-pills flex-column flex-sm-row">
+  <a class="flex-sm-fill text-sm-center nav-link active" aria-current="page" href="{% url 'products' %}">Produtos</a>
+  <a class="flex-sm-fill text-sm-center nav-link" href="{% url 'category-list' %}">Categorias</a>
+  <a class="flex-sm-fill text-sm-center nav-link" href="{% url 'seller-list' %}">Vendedores</a>
+  <a class="flex-sm-fill text-sm-center nav-link " href="{% url 'marketplace-list' %}" tabindex="-1" aria-disabled="false">Marketplace</a>
+</nav>
+<br><br>

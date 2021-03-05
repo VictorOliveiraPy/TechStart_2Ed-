@@ -61,11 +61,11 @@ class Seller(models.Model):
     cnpj = models.CharField('CNPJ', max_length=18)
     contact_email = models.EmailField('E-mail', max_length=120)
     contact_phone = models.CharField('Telefone', max_length=14)
-    street = models.CharField('Rua', max_length=220)
+    Address = models.CharField('Rua', max_length=220)
     zipcode = models.CharField('Cep', max_length=9)
     number = models.CharField('Numero', max_length=4)
     district = models.CharField('Bairro', max_length=170)
-    uf = models.CharField('UF', max_length=3)
+    state = models.CharField('Estado', max_length=3)
     city = models.CharField('Cidade', max_length=120)
     products = models.ManyToManyField(Product, related_name='products')
 

@@ -1,29 +1,22 @@
-{% extends  'layout.html' %}
+c{% extends 'base.html' %}
+
+{% block title %}Editar anuncio - Market Place{% endblock %}
 
 {% block content %}
-     <!-- OVERVIEW -->
-        <section>
-        	<div class="content row padding-bottom-12 desktop-12 " align="center">
-                <h1>Update Category</h1>
-                <div class="desktop-8  container h-90 ">
-                    <form action="." class="text-center" novalidate method="post">
-                        {% csrf_token %}
-                        {{ form.non_field_errors }}
-                        <div class="form-row  label-block input-text">
-                            <label for="{{ form.name.id_for_label }}">{{ form.name.label }}</label>
-                                {{ form.name.errors }}
-                                {{ form.name }}
-                        </div>
-                        <div class="form-row label-block input-text">
-                            <label for="{{ form.description.id_for_label }}">{{ form.description.label }}</label>
-                                {{ form.description.errors }}
-                                {{ form.description }}
-                        </div>
+    <section class="section-content">
+        <div class="container">
+            <h3>Editando: {{ category.name }}</h3>
+            <br>
 
-                        <p class="btn-row"><input type="submit" value="Update!"/></p>
-                    </form>
-                </div>
-            </div>
-        </section>
-{% endblock content %}
+            <form action="{% url 'category-update' category.id %}" method="post">
 
+                {% csrf_token %}
+
+                {{ form.as_p }}
+
+                <input type="submit" class="btn btn-success" value="Salvar">
+            </form>
+        </div>
+    </section>
+
+{% endblock %}

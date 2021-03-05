@@ -1,23 +1,22 @@
-{% extends 'base.html' %}
+c{% extends 'base.html' %}
 
-{% block title %}Seller {% endblock %}
+{% block title %}Editar vendedor{% endblock %}
 
 {% block content %}
     <section class="section-content">
         <div class="container">
-            <h3>New Seller</h3>
+            <h3>Editando: {{ product.fantasy_name }}</h3>
             <br>
 
-            <form action="" method="post">
+            <form action="{% url 'product_edit' product.id %}" method="post">
 
                 {% csrf_token %}
 
                 {{ form.as_p }}
 
-                <button type="submit" class="btn btn-success">Salvar</button>
+                <input type="submit" class="btn btn-success" value="Salvar">
             </form>
         </div>
     </section>
-
 
 {% endblock %}

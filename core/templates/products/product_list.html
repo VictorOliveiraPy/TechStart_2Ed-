@@ -1,40 +1,38 @@
-{% extends  'layout.html' %}
+{% extends 'base.html' %}
 
-{% block title %}Products{% endblock %}
+{% block title %}Meus produtos {% endblock %}
 
 {% block content %}
-    <br><br>
-    <h3 class="">List Product</h3>
+    <section class="section-content">
+        <div class="container">
+            <h3>Meus anúncios</h3>
+            <br>
+            <p><a href="{% url 'new-product' %}">Novo anúncio</a></p>
 
-    <div class="container">
-        <br/><br/>
-        <table class="table table caption-top">
-            <thead>
-            <tr>
-                <th>Código</th>
-                <th>Nome</th>
-                <td>Categoria</td>
-                <td>Descrição</td>
-                <th>Preço</th>
-                <th>Ação</th>
-            </tr>
-            </thead>
-            <tbody>
-            {% for product in product_list %}
+            <table class="table table_bordered">
                 <tr>
-                    <td>{{ product.id }}</td>
-                    <td>{{ product.name }}</td>
-                    <td>{{ product.categories }}</td>
-                    <td>{{ product.description }}</td>
-                    <td>{{ product.prince }}</td>
-                    <td>
-                        <a class="btn btn-secondary" href="{% url 'update-product' product.pk  %}">Edit<a>
-                        <a  class="btn btn-danger" href="{% url 'delete-product' product.pk %}">Delete<a>
-                        <a class="btn btn-success" href="{% url 'new-product'  %}">New<a>
-                    </td>
+                    <th>Código</th>
+                    <th>Nome</th>
+                    <th>Descrição</th>
+                    <th>Categoria</th>
+                    <th>Ação</th>
                 </tr>
-            {% endfor %}
-            </tbody>
-        </table>
-    </div>
+
+                {% for product in product_list %}
+                    <tr>
+                        <td>{{ product.id }}</td>
+                        <td>{{ product.name }}</td>
+                        <td>{{ product.description }}</td>
+                        <td>{{ product.categories }}</td>
+                        <td>
+                            <a href="{% url 'update-product' product.pk %}">Editar</a> |
+                            <a href="{% url 'delete-product' product.id %}">Perguntas
+
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </section>
 {% endblock %}
