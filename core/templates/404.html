@@ -1,6 +1,5 @@
 {% extends 'base.html' %}
 
-{% block content %}
 
 <nav class="navbar navbar-default navbar-market-place">
     <div class="container">
@@ -40,12 +39,12 @@
                 <li><a href="{% url 'category-list' %}">Categorias<i class="fa fa-heart-o"></i> </a></li>
                 <li><a href="{% url 'seller-list' %}">Vendedores</a></li>
                 <li><a href="{% url 'marketplace-list' %}" class="option-sell">Marketplaces</a></li>
-
-        <h1>PAGINA NÃO ENCONTRADA</h1>
+            <div class="container">
+                <h1>404 PAGINA NÃO ENCONTRADA</h1>
+            </div>
 
 
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
-{% endblock %}
