@@ -8,6 +8,7 @@ from core.views import home, product_update, seller_create, \
 urlpatterns = [
     path('', home, name='home'),
     path('list/products/', product_list, name='products'),
+    path('list/products/filter/', product_list, name='products'),
     path('post/proucts/', product_create, name='new-product'),
     path('update/product/<int:pk>', product_update, name='update-product'),
     path('delete/product/<int:pk>/remove', product_delete, name='delete-product'),
