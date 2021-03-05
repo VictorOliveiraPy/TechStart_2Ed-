@@ -14,13 +14,16 @@ product_list = ListView.as_view(
     template_name='products/product_list.html',
     model=Product)
 
+
 product_create = CreateView.as_view(
     template_name='products/product_toadd.html',
-    model=Product, form_class=ProductForm)
+    model=Product,
+    form_class=ProductForm)
 
 product_update = UpdateView.as_view(
     template_name='products/update_product.html',
-    model=Product, form_class=ProductForm)
+    model=Product,
+    form_class=ProductForm)
 
 product_delete = DeleteView.as_view(
     template_name='products/delete_product.html',
@@ -28,11 +31,13 @@ product_delete = DeleteView.as_view(
 
 seller_create = CreateView.as_view(
     template_name='seller/seller_create.html',
-    model=Seller, form_class=SellerForm)
+    model=Seller,
+    form_class=SellerForm)
 
 seller_update = UpdateView.as_view(
     template_name='seller/update_seller.html',
-    model=Seller, form_class=SellerForm)
+    model=Seller,
+    form_class=SellerForm)
 
 seller_list = ListView.as_view(
     template_name='seller/list_seller.html',
@@ -52,7 +57,8 @@ marketplace_delete = DeleteView.as_view(
 
 marketplace_update = UpdateView.as_view(
     template_name='marketplace/marketplace_update.html',
-    model=Marketplace, form_class=MarketplaceForm)
+    model=Marketplace,
+    form_class=MarketplaceForm)
 
 marketplace_create = CreateView.as_view(
     template_name='marketplace/marketplace_create.html',
@@ -64,11 +70,13 @@ category_list = ListView.as_view(
 
 category_update = UpdateView.as_view(
     template_name='category/category_update.html',
-    model=Category, form_class=CategoryForm)
+    model=Category,
+    form_class=CategoryForm)
 
 category_create = CreateView.as_view(
     template_name='category/category_create.html',
-    model=Category, form_class=CategoryForm)
+    model=Category,
+    form_class=CategoryForm)
 
 category_delete = DeleteView.as_view(
     template_name='category/category_delete.html',
