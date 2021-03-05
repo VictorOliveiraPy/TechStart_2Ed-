@@ -1,0 +1,1 @@
+web: gunicorn olist_tech.wsgi --log-file -
