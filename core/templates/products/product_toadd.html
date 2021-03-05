@@ -1,0 +1,40 @@
+{% extends  'layout.html' %}
+
+{% block content %}
+     <!-- OVERVIEW -->
+        <section>
+        	<div class=" ">
+                <h1>New Product</h1>
+                <div class="desktop-8  container h-90 ">
+                    <form action="." class="row mb-8" novalidate method="post">
+                        {% csrf_token %}
+                        {{ form.non_field_errors }}
+                        <div class="changelist-form-container">
+                            <label class="col-sm-2 col-form-label" for="{{ form.name.id_for_label }}">{{ form.name.label }}</label>
+                                {{ form.name.errors }}
+                                {{ form.name }}
+                        </div>
+                        <div class="form-control">
+                            <label class="col-sm-2 col-form-label" for="{{ form.description.id_for_label }}">{{ form.description.label }}</label>
+                                {{ form.description.errors }}
+                                {{ form.description }}
+                        </div>
+                        <div class="input-group-text">
+                            <label class="col-sm-2 col-form-label" for="{{ form.categories.id_for_label }}">{{ form.categories.label }}</label>
+                                {{ form.categories.errors }}
+                                {{ form.categories }}
+                        </div>
+
+                        <div class="input-group-text">
+                            <label for="{{ form.prince.id_for_label }}">{{ form.prince.label }}</label>
+                                {{ form.prince.errors }}
+                                {{ form.prince }}
+                        </div>
+
+                        <p class="btn-row"><input type="submit" value="Enviar!"/></p>
+                    </form>
+                </div>
+            </div>
+        </section>
+{% endblock content %}
+

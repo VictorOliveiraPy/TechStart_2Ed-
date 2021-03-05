@@ -1,0 +1,74 @@
+{% extends  'layout.html' %}
+
+{% block content %}
+     <!-- OVERVIEW -->
+        <section>
+        	<div class="content row padding-bottom-12 desktop-12 " align="center">
+                <h1>Create Seller</h1>
+                <div class="desktop-8  container h-90 ">
+                    <form action="." class="text-center" novalidate method="post">
+                        {% csrf_token %}
+                        {{ form.non_field_errors }}
+                        <div class="form-row  label-block input-text">
+                            <label for="{{ form.fantasy_name.id_for_label }}">{{ form.fantasy_name.label }}</label>
+                                {{ form.fantasy_name.errors }}
+                                {{ form.fantasy_name }}
+                        </div>
+                        <div class="form-row label-block input-text">
+                            <label for="{{ form.company_name.id_for_label }}">{{ form.company_name.label }}</label>
+                                {{ form.company_name.errors }}
+                                {{ form.company_name }}
+                        </div>
+                          <div class="form-row label-block input-text">
+                            <label for="{{ form.cnpj.id_for_label }}">{{ form.cnpj.label }}</label>
+                                {{ form.cnpj.errors }}
+                                {{ form.cnpj }}
+                        </div>
+
+                          <div class="form-row label-block input-text">
+                            <label for="{{ form.contact_phone.id_for_label }}">{{ form.contact_phone.label }}</label>
+                                {{ form.contact_phone.errors }}
+                                {{ form.contact_phone }}
+                        </div>
+                           <div class="form-row  label-block input-text">
+                            <label for="{{ form.contact_email.id_for_label }}">{{ form.contact_email.label }}</label>
+                                {{ form.contact_email.errors }}
+                                {{ form.contact_email }}
+                        </div>
+                        <div class="form-row label-block input-text">
+                            <label for="{{ form.street.id_for_label }}">{{ form.street.label }}</label>
+                                {{ form.street.errors }}
+                                {{ form.street }}
+                        </div>
+                          <div class="form-row label-block input-text">
+                            <label for="{{ form.zipcode.id_for_label }}">{{ form.zipcode.label }}</label>
+                                {{ form.zipcode.errors }}
+                                {{ form.zipcode }}
+                        </div>
+
+                          <div class="form-row label-block input-text">
+                            <label for="{{ form.number.id_for_label }}">{{ form.number.label }}</label>
+                                {{ form.number.errors }}
+                                {{ form.number }}
+                        </div>
+
+                               <div class="form-row label-block input-text">
+                            <label for="{{ form.district.id_for_label }}">{{ form.district.label }}</label>
+                                {{ form.district.errors }}
+                                {{ form.district }}
+                        </div>
+
+                          <div class="form-row label-block input-text">
+                            <label for="{{ form.city.id_for_label }}">{{ form.city.label }}</label>
+                                {{ form.city.errors }}
+                                {{ form.city }}
+                        </div>
+
+
+                        <p class="btn-row"><input type="submit" value="Create!"/></p>
+                    </form>
+                </div>
+            </div>
+        </section>
+{% endblock content %}
+

@@ -1,0 +1,36 @@
+{% extends  'layout.html' %}
+
+{% block title %}Category{% endblock %}
+
+{% block content %}
+    <br><br>
+    <div class="container">
+        <h3>List Category</h3>
+        <br/><br/>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Código</th>
+                <th>Nome</th>
+                <th>Descrição</th>
+
+                <th>Ação</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for category in category_list %}
+                <tr>
+                    <td>{{ category.id }}</td>
+                    <td>{{ category.name }}</td>
+                    <td>{{ category.description }}</td>
+                    <td>
+                        <a class="btn btn-secondary" href="{% url 'category-update' category.pk   %}">Edit<a>
+                        <a  class="btn btn-danger" href="{% url 'category-delete' category.pk %}">Delete<a>
+                        <a class="btn btn-success" href="{% url 'category-create'  %}">New<a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends  'layout.html' %}
+
+{% block title %}Products{% endblock %}
+
+{% block content %}
+    <br><br>
+    <div class="container">
+        <h3>List Product</h3>
+        <br/><br/>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Nome</th>
+                <th>E-mail</th>
+                <th>Site</th>
+                <th>Descrição</th>
+                <th>Responsável técnico</th>
+                <th>Ação</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for marketplace in marketplace_list %}
+                <tr>
+                    <td>{{ marketplace.name }}</td>
+                    <td>{{ marketplace.contact_email }}</td>
+                    <td>{{ marketplace.website }}</td>
+                    <td>{{ marketplace.description }}</td>
+                    <td>{{ marketplace.technical_manager }}</td>
+
+                    <td>
+                        <a class="btn btn-secondary" href="{% url 'marketplace-update' marketplace.pk  %}">Edit<a>
+                        <a  class="btn btn-danger" href="{% url 'marketplace-delete' marketplace.pk %}">Delete<a>
+                        <a class="btn btn-success" href="{% url 'marketplace-create'  %}">New<a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

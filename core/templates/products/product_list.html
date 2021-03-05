@@ -1,0 +1,40 @@
+{% extends  'layout.html' %}
+
+{% block title %}Products{% endblock %}
+
+{% block content %}
+    <br><br>
+    <h3 class="">List Product</h3>
+
+    <div class="container">
+        <br/><br/>
+        <table class="table table caption-top">
+            <thead>
+            <tr>
+                <th>Código</th>
+                <th>Nome</th>
+                <td>Categoria</td>
+                <td>Descrição</td>
+                <th>Preço</th>
+                <th>Ação</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for product in product_list %}
+                <tr>
+                    <td>{{ product.id }}</td>
+                    <td>{{ product.name }}</td>
+                    <td>{{ product.categories }}</td>
+                    <td>{{ product.description }}</td>
+                    <td>{{ product.prince }}</td>
+                    <td>
+                        <a class="btn btn-secondary" href="{% url 'update-product' product.pk  %}">Edit<a>
+                        <a  class="btn btn-danger" href="{% url 'delete-product' product.pk %}">Delete<a>
+                        <a class="btn btn-success" href="{% url 'new-product'  %}">New<a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
