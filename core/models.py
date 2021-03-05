@@ -45,7 +45,7 @@ class Marketplace(BaseModel):
     technical_manager = models.CharField('Responsável técnico', max_length=255)
 
     def get_absolute_url(self):
-        return reverse('home')
+        return reverse('marketplace-list')
 
     class Meta:
         verbose_name_plural = 'Marketplaces'
