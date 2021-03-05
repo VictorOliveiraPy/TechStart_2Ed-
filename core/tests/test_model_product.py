@@ -8,7 +8,7 @@ class TestProductModelTest(TestCase):
         self.obj = Product(
             name='Notebook',
             description='i5 2020',
-            prince='124',
+            price='124',
         )
         self.obj.save()
 

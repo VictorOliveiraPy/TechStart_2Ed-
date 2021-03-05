@@ -1,20 +1,18 @@
-{% extends  'layout.html' %}
+{% extends 'base.html' %}
 
 {% block content %}
-     <!-- OVERVIEW -->
-        <section>
-        	<div class="content row padding-bottom-12 desktop-12 " align="center">
-                <h1>Delete</h1>
-                <div class="desktop-8  container h-90 ">
-                    <form action="." class="text-center" novalidate method="post">
-                        {% csrf_token %}
+    <section class="section-content">
+        <div class="container">
+            <h3>Deleta: {{ seller.fantasy_name }}</h3>
+            <br>
 
+            <form action="" method="post">
 
-                        <strong>Are you sure ?!</strong><br/>
-                        <p class="btn-row"><input type="submit" value="delete!"/></p>
-                    </form>
-                </div>
-            </div>
-        </section>
-{% endblock content %}
+                {% csrf_token %}
 
+              <strong>Are you sure ?!</strong><br/>
+                <button type="submit" class="btn btn-success">Deleta</button>
+            </form>
+        </div>
+    </section>
+{% endblock %}

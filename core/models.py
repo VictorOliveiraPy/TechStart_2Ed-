@@ -25,7 +25,7 @@ class Category(BaseModel):
 
 class Product(BaseModel):
     categories = models.ManyToManyField(Category, related_name='categories')
-    prince = models.DecimalField(max_length=8, decimal_places=2, max_digits=30)
+    price = models.DecimalField(max_length=8, decimal_places=2, max_digits=30)
 
     class Meta:
         verbose_name_plural = "Products"
@@ -65,7 +65,7 @@ class Seller(models.Model):
     zipcode = models.CharField('Cep', max_length=9)
     number = models.CharField('Numero', max_length=4)
     district = models.CharField('Bairro', max_length=170)
-    state = models.CharField('Estado', max_length=3)
+    state = models.CharField('Estado', max_length=30)
     city = models.CharField('Cidade', max_length=120)
     products = models.ManyToManyField(Product, related_name='products')
 
@@ -75,7 +75,6 @@ class Seller(models.Model):
 
     def __str__(self):
         return self.company_name
-
 
     def get_absolute_url(self):
         return reverse('seller-list')

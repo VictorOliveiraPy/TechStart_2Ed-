@@ -12,7 +12,7 @@ class CategoryAdmin(admin.ModelAdmin):
 
 @admin.register(Product)
 class ProductsAdmin(admin.ModelAdmin):
-    list_display = ('id', 'prince', 'description')
+    list_display = ('id', 'price', 'description')
 
 
 @admin.register(Marketplace)

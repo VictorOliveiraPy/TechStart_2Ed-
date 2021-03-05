@@ -11,11 +11,11 @@ class TestProductModelTest(TestCase):
             cnpj='92.579.036/0001-90',
             contact_email='victorblog410@gmail.com',
             contact_phone='81-998832982',
-            street='rua nova',
+            address='rua nova',
             zipcode='50050250',
             number='36',
             district='boa vista',
-            uf='pe',
+            state='pe',
             city='recife',
 
         )
